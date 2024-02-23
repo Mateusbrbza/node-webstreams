@@ -43,6 +43,7 @@ async function consumeAPI(signal) {
 }
 
 let counter = 0
+let elementCounter = 0
 
 function appendToHtml(element) {
   return new WritableStream({
@@ -51,11 +52,17 @@ function appendToHtml(element) {
       <article>
         <div class="text">
           <h3>[${++counter}]  ${title}</h3>
-          <p>${description}</p>
+          <p>${description.slice(0, 100)}</p>
           <a href="${url}">Here's why</a>
         </div>
       </article>
       `
+      if (++elementCounter > 20) {
+        element.innerHTML = card
+        elementCounter = 0
+        return
+      }
+
       element.innerHTML += card
     },
     abort(reason) {
