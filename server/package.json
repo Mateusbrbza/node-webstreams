@@ -1,0 +1,19 @@
+{
+  "name": "webstreams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "engines": {
+    "node": "19"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "byte-size": "8.1"
+  }
+}
